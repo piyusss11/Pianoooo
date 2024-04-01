@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    /* height: 100%;
+    width: 100%; */
+    min-height: 100vh;
+    background-image: linear-gradient(to right bottom, #fefedf, #ddf0c3, #b2e3af, #7bd6a6, #00c9a7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* text-align: center; */
+}
+#heading h1{
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    /* background-color: #00c9a7; */
+
+}
+.piano{
+    display: flex;
+    
+
+    /* width: 80%; */
+    /* height: 50%; */
+}
+.key{
+    height:calc(var(--width)*4) ;
+    width: var(--width);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-right: 10px;
+    font-weight: 800;
+
+}
+.white{
+    /* height: 400px; */
+    --width: 100px;
+    background-color: white;
+    border: 1px solid black;
+}
+.white.active{
+    background-color: #333;
+    color: white;
+}
+.black{
+    /* height: 240px; */
+    --width: 60px;
+    background-color: black;
+    margin-left: calc(var(--width)/ -2);
+    margin-right: calc(var(--width)/ -2);
+    z-index: 2;
+    color: white;
+
+}
+.black.active{
+    background-color: #ccc;
+    color: black;
+}
+.hide span{
+    display: none;
+}
+#heading h2{
+    font-weight: 400;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+#heading h2 input{
+    border-radius: 25px;
+    height: 30px;
+  width: 60px;
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+  background: rgb(106, 238, 106)
+}
+#heading h2 input::before{
+    content: "";
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: black;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+
+}
+#heading h2 input:checked::before{
+    border: #00c9a7;
+    left: 35px;
+  background: #fff;
+}
